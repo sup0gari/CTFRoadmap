@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 '''
+Q6.[Crypto] Classical Cipher
 fsdz{Fdhvdu_flskhu_lv_fodvvlfdo_flskhu}
 問題は上記の暗号文を古典暗号であるシーザー暗号で解読するもの。
 今回は3文字ずらすと指定があるが、このスクリプトは実行時に文字数を指定できるものとする。
