@@ -1,2 +1,3 @@
 # Easy
 ## Riddle Registry
+- forensics
