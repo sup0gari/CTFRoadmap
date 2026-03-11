@@ -1,3 +1,7 @@
 # Easy
 ## Riddle Registry
-- forensics
+`confidential.pdf`をダウンロード
+```bash
+file confidential.pdf
+exiftool confidential.pdf
+```
