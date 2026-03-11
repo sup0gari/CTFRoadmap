@@ -1,0 +1,2 @@
+# Easy
+## Riddle Registry
