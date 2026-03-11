@@ -12,5 +12,5 @@ exiftool confidential.pdf
 ```bash
 cat server.log
 cat server.log | grep -i flagpart
-
+cat server.log | grep -i flagpart | cut -d ' ' -f 5 | sort | uniq
 ```
