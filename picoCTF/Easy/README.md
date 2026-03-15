@@ -89,3 +89,6 @@ python3
 0x96
 ```
 3. win関数にジャンプさせる
+
+# head-dump
+## apiで/heapdumpにアクセスし、文字列検索
