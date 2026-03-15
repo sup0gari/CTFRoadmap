@@ -22,6 +22,7 @@ steghide extract -sf img.jpg
 ```
 
 ## Flag in Flame
+### base64復号からascii変換
 ```bash
 file logs.txt
 cat logs.txt
@@ -32,6 +33,7 @@ echo '7069636F4354467B666F72656E736963735F616E616C797369735F69735F616D617A696E67
 ```
 
 ## Corrupted file
+### JPEGファイルの先頭バイト修復
 ```bash
 xxd -l 32 file
 # 00000000: 5c78 ffe0 0010 4a46 4946 0001 0100 0001  \x....JFIF......
@@ -40,6 +42,7 @@ xxd -l 32 file
 ```
 
 ## DISKO 1
+### ディスクファイルを解凍し、文字列検索
 ```bash
 file disko-1.dd.gz
 gunzip disko-1.dd.gz
