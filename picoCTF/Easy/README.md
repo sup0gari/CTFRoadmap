@@ -30,3 +30,11 @@ file logs
 mv logs image.png
 echo '7069636F4354467B666F72656E736963735F616E616C797369735F69735F616D617A696E675F35646161346132667D' | sed 's/../& /g'
 ```
+
+## Corrupted file
+```bash
+xxd -l 32 file
+# 00000000: 5c78 ffe0 0010 4a46 4946 0001 0100 0001  \x....JFIF......
+# JPEG/JFIF: ff d8 ff e0
+(printf '\xff\xd8' && tail -c + 3 file) > file.jpg
+```
