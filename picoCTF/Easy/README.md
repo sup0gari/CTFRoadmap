@@ -38,3 +38,11 @@ xxd -l 32 file
 # JPEG/JFIF: ff d8 ff e0
 (printf '\xff\xd8' && tail -c + 3 file) > file.jpg
 ```
+
+## DISKO 1
+```bash
+file disko-1.dd.gz
+gunzip disko-1.dd.gz
+file disko-1.dd
+strings disko-1.dd | grep -i "picoctf"
+```
