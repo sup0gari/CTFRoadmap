@@ -92,3 +92,13 @@ python3
 
 # head-dump
 ## apiで/heapdumpにアクセスし、文字列検索
+
+# hashcrack
+## 32文字のハッシュ解析
+1. hashidとjohnで解析する
+```bash
+hashid hash.txt
+john hash --format=raw-md5 -w=/usr/share/wordlists/rockyou.txt
+john hash --format=raw-sha1 -w=/usr/share/wordlists/rockyou.txt
+john hash --format=raw-sha256 -w=/usr/share/wordlists/rockyou.txt
+```
