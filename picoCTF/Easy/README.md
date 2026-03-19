@@ -102,3 +102,15 @@ john hash --format=raw-md5 -w=/usr/share/wordlists/rockyou.txt
 john hash --format=raw-sha1 -w=/usr/share/wordlists/rockyou.txt
 john hash --format=raw-sha256 -w=/usr/share/wordlists/rockyou.txt
 ```
+
+# RED
+
+1. ファイル情報を調べる
+```bash
+file red.png
+strings red.png
+# 縦読みでヒント(LSB)
+```
+2. StegOnline
+https://georgeom.net/StegOnline/
+3. base64デコード
